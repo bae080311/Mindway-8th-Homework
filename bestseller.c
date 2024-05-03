@@ -2,10 +2,11 @@
 #include <string.h>
 
 // 사전 순으로 정렬하는 함수
-void sortStrings(char arr[][51], int n) {
+void Sort_alphabetically(char arr[][51], int size) 
+{
     char temp[51];
-    for (int i = 0; i < n - 1; i++) {
-        for (int j = i + 1; j < n; j++) {
+    for (int i = 0; i < size - 1; i++) {
+        for (int j = i + 1; j < size; j++) {
             if (strcmp(arr[i], arr[j]) > 0) {
                 strcpy(temp, arr[i]);
                 strcpy(arr[i], arr[j]);
@@ -31,7 +32,7 @@ int main() {
     }
 
     // 책 제목을 사전순으로 정렬
-    sortStrings(best, n);
+    Sort_alphabetically(best, n);
 
     // 제일 많이 나온 책 찾기
     for (int i = 0; i < n; i++) {
